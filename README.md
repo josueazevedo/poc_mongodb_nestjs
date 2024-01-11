@@ -1,73 +1,47 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Projeto POC NestJS com MongoDB
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este é um projeto POC (Proof of Concept) desenvolvido em NestJS. O projeto utiliza o MongoDB como banco de dados NoSQL para armazenamento de dados.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Objetivo
 
-## Description
+O objetivo deste projeto é demonstrar a integração básica entre o NestJS e o MongoDB, fornecendo uma estrutura de aplicativo simples que pode ser usada como ponto de partida para projetos mais complexos.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Recursos
 
-## Installation
+- **NestJS**: O framework Node.js para construção de aplicativos escaláveis.
+- **MongoDB**: Banco de dados NoSQL para armazenamento de dados.
+- **TypeScript**: Linguagem de programação tipada para JavaScript.
+- **Docker**: Contêiner de aplicativos para facilitar a implantação.
 
+## Requisitos
+
+Certifique-se de ter o seguinte instalado em sua máquina antes de executar o projeto:
+
+- Node.js
+- npm (Node Package Manager)
+- Docker (opcional, mas recomendado para facilitar a configuração do MongoDB)
+
+## Instalação
+
+1. Clone este repositório
+2. User o docker-compose para disponibilizar o banco de dados
 ```bash
-$ npm install
+docker compose up -d
+```
+3. Inicie o projeto
+```bash
+npm run start:dev
 ```
 
-## Running the app
+# API Endpoints
 
-```bash
-# development
-$ npm run start
+A seguir estão os endpoints disponíveis nesta API:
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+| Método | Rota                   | Descrição                         |
+|--------|------------------------|-----------------------------------|
+| GET    | `/person`           | Obter todos os registros          |
+| GET    | `/person/:id`       | Obter detalhes por ID|
+| POST   | `/person`           | Criar um novo registro             |
+| PATCH    | `/person/:id`       | Atualizar por ID       |
+| DELETE | `/person/:id`       | Excluir por ID         |
+| ...    | ...                    | ...                               |
